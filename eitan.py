@@ -20,15 +20,16 @@ def quest(questr, state):
 if __name__ == '__main__':
 	score = 0
 	state = 0
-	infilename = " "
 	filenamelist = []
 	data = []
 	datanum = 0
 	quest.answer = u""
-	while infilename != "":
+	while True:
 		print u"読み込むファイル名を入力してください"
 		infilename = raw_input(">")
 		filenamelist.append(infilename)
+		if infilename == ""
+			break
 	filenamelist.remove('')
 
 	for filename in filenamelist:
