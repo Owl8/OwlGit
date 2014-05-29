@@ -10,12 +10,10 @@ def quest(questr, state):
 		return 0
 	else:
 		if quest.answer.rstrip("\n") == questr:
-			string = "正解"
-			print string.decode('utf-8')
+			print u"正解"
 			return 1
 		else:
-			string = "不正解"
-			print string.decode('utf-8')
+			print u"不正解"
 			print questr
 			return 0
 
@@ -26,10 +24,9 @@ if __name__ == '__main__':
 	filenamelist = []
 	data = []
 	datanum = 0
-	quest.answer = ""
+	quest.answer = u""
 	while infilename != "":
-		string = "読み込むファイル名を入力してください"
-		print string.decode('utf-8')
+		print u"読み込むファイル名を入力してください"
 		infilename = raw_input(">")
 		filenamelist.append(infilename)
 	filenamelist.remove('')
@@ -43,12 +40,10 @@ if __name__ == '__main__':
 	while True:
 		state = 0
 		score = 0
-		string = "0.順次モード 1.ランダムモード それ以外:終了"
-		print string.decode('utf-8')
+		print u"0.順次モード 1.ランダムモード それ以外:終了"
 		mode = input(">")
 		if mode == 0:
-			string = "日本語で出題されるので英訳して答えてください"
-			print string.decode('utf-8')
+			print u"日本語で出題されるので英訳して答えてください"
 
 			for nowdata in data:
 				score += quest(nowdata, state)
@@ -57,8 +52,7 @@ if __name__ == '__main__':
 			print string.decode('utf-8')
 			print "%d / %d\n" % (score, datanum / 2)
 		elif mode == 1:
-			string = "問題数を入力してください\n0未満の値を入れるかファイルの英文の合計より大きい値を入れるとすべてです."
-			print string.decode('utf-8')
+			print u"問題数を入力してください\n0未満の値を入れるかファイルの英文の合計より大きい値を入れるとすべてです."
 			question = input(">")
 			if question < 0 or question > datanum:
 				question = datanum
@@ -73,8 +67,7 @@ if __name__ == '__main__':
 					data.pop(questn - 1)
 					data.pop(questn - 2)
 				state = (state + 1) % 2
-			string = "\n結果"
-			print string.decode('utf-8')
+			print u"\n結果"
 			print "%d / %d\n" % (score, startquenum)
 		else:
 			break 
