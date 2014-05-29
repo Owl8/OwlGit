@@ -28,7 +28,7 @@ if __name__ == '__main__':
 		print u"読み込むファイル名を入力してください"
 		infilename = raw_input(">")
 		filenamelist.append(infilename)
-		if infilename == ""
+		if infilename == "":
 			break
 	filenamelist.remove('')
 
