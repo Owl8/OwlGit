@@ -6,10 +6,16 @@ import sys
 import os
 import random
 
+def screenclear():
+	if os.name == "nt": # Windows 
+		os.system("CLS")
+	else: # not Windows 
+		os.system("clear")
+
 def quest(questdata):
 	global repeat
         problem = questdata.split(',')
-	os.system("CLS")
+        screenclear()
 	print problem[0].decode("utf-8")
 	answer = sys.stdin.readline()
 	if answer.rstrip("\n") == problem[1]:
@@ -71,7 +77,7 @@ if __name__ == '__main__':
 		        raw_input("-- press Enter key --")
 			for nowdata in data:
 				score += quest(nowdata)
-			os.system("CLS")
+			screenclear()
 			print u"\n結果"
 			print "%d / %d\n" % (score, datanum)
 		elif mode == "1":
@@ -88,7 +94,7 @@ if __name__ == '__main__':
 				score += quest(randdata[questn])
 				numofquestion -= 1
 				randdata.pop(questn)
-			os.system("CLS")
+			screenclear()
 			print u"\n結果"
 			print "%d / %d\n" % (score, startquenum)
 		else:
