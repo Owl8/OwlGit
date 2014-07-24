@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# 英単語練習プログラムCSVファイル対応版 
+# 英単語練習プログラムCSVファイル用 
 
 import sys
 import os
