@@ -55,15 +55,18 @@ if __name__ == '__main__':
 	while True:
 		score = 0
 		print u"0.順次モード 1.ランダムモード それ以外:終了"
-		mode = input(">")
-		print u"間違えた時に問題を繰り返しますか?" 
-		repeat = raw_input("(y/n)\n>")
+		mode = raw_input(">")
+                if mode == "0" or mode == "1":
+			print u"間違えた時に問題を繰り返しますか?" 
+			repeat = raw_input("(y/n)\n>")
+                else:
+			exit(0)
 		if repeat == "reset":
 			datanum = fileread()
 			continue
 		if (len(data) == 0):
 			break
-		if mode == 0:
+		if mode == "0":
 		        print u"日本語で出題されるので英訳して答えてください"
 		        raw_input("-- press Enter key --")
 			for nowdata in data:
@@ -71,7 +74,7 @@ if __name__ == '__main__':
 			os.system("CLS")
 			print u"\n結果"
 			print "%d / %d\n" % (score, datanum)
-		elif mode == 1:
+		elif mode == "1":
 			randdata = list(data)
 			print u"問題数を入力してください\n0未満の値を入れるかファイルの英文の合計より大きい値を入れるとすべてです."
 			numofquestion = input(">")
