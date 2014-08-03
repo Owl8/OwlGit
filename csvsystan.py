@@ -52,7 +52,7 @@ def fileread():
 			data.append(readdata.rstrip('\n'))
 			datanum += 1
 		readfile.close()
-		return datanum
+	return datanum
 
 if __name__ == '__main__':
 	data = []
