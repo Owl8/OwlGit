@@ -14,7 +14,7 @@ def screenclear():
 
 def quest(questdata):
 	global repeat
-        problem = questdata.split(',')
+        problem = questdata.split(', ')
         screenclear()
 	print problem[0].decode("utf-8")
 	answer = sys.stdin.readline()
