@@ -8,6 +8,6 @@ csvsystan.pyはCSVファイル用
 
 csvファイルに1行に1問,
 
-日本語,English
+日本語, English
 
 みたいにすると使える。
